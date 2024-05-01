@@ -4,20 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 Not Found</title>
-    <link rel="icon" type="image/x-icon" href="icon/not_found.ico">
     <!-- Meta -->
     <meta name="description" content="The page you requested could not be found."/>
     <meta name="keywords" content="404, not found, page not found, error"/>
 
     <!-- CSS File -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff;
+            /* background-color: #f0f0f0; */
+        }
+        .notFound-container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-    <div class="maintenance-container">
+    <div class="notFound-container">
         <h1>404 Not Found</h1>
         <p>The page you requested could not be found.</p>
     </div>
     <!-- JavaScript File -->
-    <script src="javascript/script.js"></script>
+    <script src="javascript/script.js">
+        // Block "klik kanan"
+        document.addEventListener('contextmenu', function (e) {
+            alert("404 Not Found");
+            e.preventDefault();
+        });
+
+        // Block "CTRL + F"
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && (e.key === 'f' || e.key === 'F')) {
+                alert("404 Not Found");
+                e.preventDefault();
+            }
+        });
+
+        // Block "CTRL + Shift + I"
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+                alert("404 Not Found");
+                e.preventDefault();
+            }
+        });
+
+    </script>
 </body>
 </html>
